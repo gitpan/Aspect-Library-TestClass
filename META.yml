@@ -20,7 +20,7 @@ no_index:
     - inc
     - t
 requires:
-  Aspect::Modular: 0.32
+  Aspect::Modular: 0.36
   Params::Util: 1.00
   Test::Class: 0.33
   perl: 5.6.0
@@ -28,4 +28,4 @@ resources:
   ChangeLog: http://fisheye2.atlassian.com/changelog/cpan/trunk/Aspect-Library-TestClass
   license: http://dev.perl.org/licenses/
   repository: http://svn.ali.as/cpan/trunk/Aspect-Library-TestClass
-version: 0.32
+version: 0.36
