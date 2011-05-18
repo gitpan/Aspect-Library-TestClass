@@ -10,7 +10,7 @@ use Aspect::Advice::Before ();
 use Aspect::Pointcut::Call ();
 use Aspect::Pointcut::And  ();
 
-our $VERSION = '0.36';
+our $VERSION = '0.37';
 our @ISA     = 'Aspect::Modular';
 
 sub Test::Class::make_subject {
@@ -33,7 +33,7 @@ sub get_advice {
 			my (@params) = $self->subject_params if $self->can('subject_params');
 			my $subject = $self->make_subject(@params);
 			$self->init_subject_state($subject) if $self->can('init_subject_state');
-			$context->append_param($subject);
+			$context->params( $context->params, $subject );
 		},
 	);
 }
@@ -148,7 +148,7 @@ distribution.
 
 Copyright 2001 by Marcel GrE<uuml>nauer
 
-Some parts copyright 2009 - 2010 Adam Kennedy.
+Some parts copyright 2009 - 2011 Adam Kennedy.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
